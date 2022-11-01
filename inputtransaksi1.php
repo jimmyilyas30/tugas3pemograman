@@ -12,12 +12,17 @@ $no_transaksi = $_POST['no_transaksi'];
 $jenis_transaksi = $_POST['jenis_transaksi'];
 $barang_id = $_POST['barang_id'];
 $jumlah_transaksi = $_POST['jumlah_transaksi'];
-$user_id = $_POST['user_id'];
+$diskon_barang= $_POST['diskon_barang'];
+$diskon_member= $_POST['diskon_member'];
+$total_pembelian = $_POST['total_pembelian'];
+$total_diskon = $_POST['total_diskon'];
+$total_transaksi= $_POST['total_transaksi'];
+$member_id = $_POST['member_id'];
 
-$a=mysqli_query($koneksi,"insert into transaksi values('','$tgl_transaksi','$no_transaksi','$jenis_transaksi','$barang_id','$jumlah_transaksi','$user_id')");
+$a=mysqli_query($koneksi,"insert into transaksii values('','tgl_transaksi','no_transaksi','jenis_transaksi','barang_id','jumlah_transaksi','diskon_barang','diskon_member','total_pembelian','total_diskon','total_transaksi,','member_id')");
 if ($a)
 {
-header("location:tampiltransaksi.php");
+header("location:tampiltransaksi1.php");
 }
 else
 {
@@ -28,14 +33,14 @@ else
 $querybarang = "SELECT * FROM barang";
 $resultbarang = mysqli_query($koneksi,$querybarang);
 
-$queryuser = "SELECT * FROM user";
-$resultuser = mysqli_query($koneksi,$queryuser);
+$querymember = "SELECT * FROM member";
+$resultmember = mysqli_query($koneksi,$querymember);
 
 ?>
 <body>
 <h2>Jimmy ilyas.com<h/2>
 <br/>
-<a href="tampiltransaksi.php">KEMBALI<a/>
+<a href="tampiltransaksi1.php">KEMBALI<a/>
 <br/>
 <br/>
 <h3>TAMBAH DATA TRANSAKSI</h3>
@@ -76,13 +81,33 @@ $resultuser = mysqli_query($koneksi,$queryuser);
 	<td><input type="number" name="jumlah_transaksi"></td>
 	</tr>
 	<tr>
-	<td>User</td>
-	<td><select name="user_id">
+	<td>Diskon Member</td>
+	<td><input type="text" name="diskon_member"></td>
+	</tr>
+	<tr>
+	<td>Diskon Barang</td>
+	<td><input type="text" name="diskon_barang"></td>
+	</tr>
+	<tr>
+	<td>Total Pembelian</td>
+	<td><input type="number" name="total_pembelian"></td>
+	</tr>
+	<tr>
+	<td>Total Diskon</td>
+	<td><input type="text" name="total_diskon"></td>
+	</tr>
+	<tr>
+	<td>Total Transaksi</td>
+	<td><input type="number" name="total_transaksi"></td>
+	</tr>
+	<tr>
+	<td>member</td>
+	<td><select name="member_id">
 	<option value="">---Pilih---</option>
 	<?php
-	while ($datauser=mysqli_fetch_array($resultuser))
+	while ($datamember=mysqli_fetch_array($resultmember))
 	{
-		echo "<option value=$datauser[id_user]>$datauser[nama]</option>";
+		echo "<option value=$datamember[id_member]>$datamember[nama]</option>";
 	}
 	?>
 	</select>
@@ -98,3 +123,4 @@ $resultuser = mysqli_query($koneksi,$queryuser);
 	</html>
 	
 	
+
