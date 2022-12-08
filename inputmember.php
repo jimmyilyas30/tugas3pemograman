@@ -35,9 +35,9 @@ header("location:tampilmember.php");
 	<td>level</td>
 	<td><select name="level">
 	<option value="">-----Pilih</option>
-	<option value="1">Gold</option>
-	<option value="2">Silver</option>
-	<option value="3">Platinum</option>
+	<option value="Gold">Gold</option>
+	<option value="Silver">Silver</option>
+	<option value="Platinum">Platinum</option>
 	</select>
 	<td>
 	</tr>
