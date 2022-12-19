@@ -3,9 +3,9 @@
 	$no =1;
 	if(isset($_POST['cari'])){
 	//$data = mysqli_query($koneksi,"select * from login where username='".$_POST['nama']."'");
-	$data = mysqli_query($koneksi,"select * from user where nama like '%".$_POST['nama']."%'");
+	$data = mysqli_query($koneksi,"select * from login where username like '%".$_POST['nama']."%'");
 	}else{
-	$data = mysqli_query($koneksi,"select * from user");
+	$data = mysqli_query($koneksi,"select * from login");
 	}
 	?>
 	<form method="POST">
@@ -22,7 +22,7 @@
 	<body>
 	<h2>Pemograman 3 2022</h2>
 	<br/>
-	<a href="user.php">+ TAMBAH USER</a>
+	<a href="user.php">+ TAMBAH DATA USER</a>
 	<br/>
 	<table border="1">
 	<tr>
@@ -39,13 +39,13 @@
 		<form method="POST">
 		<tr>
 			<td><?php echo $no++; ?></td>
-			<td><?php echo $d['nama']; ?></td>
+			<td><?php echo $d['username']; ?></td>
 			<td><?php echo $d['password']; ?></td>
 			<td><?php echo $d['level']; ?></td>
 			<td><?php echo $d['status']; ?></td>
 			<td>
-				<a href="edit_user.php?id_user=<?php echo $d['id_user']; ?>">EDIT</a>
-				<a href="hapus_user.php?id_user=<?php echo $d['id_user']; ?>">HAPUS</a>
+				<a href="edit_login.php?id_user=<?php echo $d['id_user']; ?>">EDIT</a>
+				<a href="hapus_login.php?id_user=<?php echo $d['id_user']; ?>">HAPUS</a>
 			<td>
 		</tr>
 	<?php

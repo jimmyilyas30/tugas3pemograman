@@ -1,3 +1,9 @@
+<?php
+include 'koneksi.php';
+	$no =1;
+	$data = mysqli_query($koneksi,"select * from member");
+	?>
+	<form method="POST">
 </html>
 	<head>
 	<title>jimmyilyas.com</title>

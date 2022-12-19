@@ -29,8 +29,8 @@
 			<td><?php echo $d['qty']; ?></td>
 			<td><?php echo $d['kategori_id']; ?></td>
 			<td>
-				<a href="edit_user.php?id=<?php echo $d['id']; ?>">EDIT</a>
-				<a href="edit_user.php?id=<?php echo $d['id']; ?>">HAPUS</a>
+				<a href="editbarang.php?id_barang=<?php echo $d['id_barang']; ?>">EDIT</a>
+				<a href="hapusbarang.php?id_barang=<?php echo $d['id_barang']; ?>">HAPUS</a>
 			<td>
 		</tr>
 	<?php

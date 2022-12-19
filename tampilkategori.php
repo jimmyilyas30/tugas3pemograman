@@ -23,8 +23,8 @@
 			<td><?php echo $no++; ?></td>
 			<td><?php echo $d['nama_kategori']; ?></td>
 			<td>
-				<a href="edit_tampilkategori.php?id=<?php echo $d['id']; ?>">EDIT</a>
-				<a href="edit_tampilkategori.php?id=<?php echo $d['id']; ?>">HAPUS</a>
+				<a href="editkategori.php?id_kategori=<?php echo $d['id_kategori']; ?>">EDIT</a>
+				<a href="hapuskategori.php?id_kategori=<?php echo $d['id_kategori']; ?>">HAPUS</a>
 			<td>
 		</tr>
 	<?php

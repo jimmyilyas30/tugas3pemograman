@@ -26,15 +26,17 @@
 	<?php
 	include 'koneksi.php';
 	$no =1;
-	$data = mysqli_query($koneksi,"select * from transaksii join barang where transaksi.barang_id = barang.id_barang");
-	while($d = mysqli_fetch_array($data)){
+	$data = mysqli_query($koneksi,"select * from transaksii");
+	while($d= mysqli_fetch_array($data)){
 		?>
+		<form method="POST">
+		<tr>
 		<tr>
 			<td><?php echo $no++; ?></td>
 			<td><?php echo $d['tgl_transaksi']; ?></td>
 			<td><?php echo $d['no_transaksi']; ?></td>
 			<td><?php echo $d['jenis_transaksi']; ?></td>
-			<td><?php echo $d['nama_barang']; ?></td>
+			<td><?php echo $d['barang_id']; ?></td>
 			<td><?php echo $d['jumlah_transaksi']; ?></td>
 			<td><?php echo $d['diskon_member']; ?></td>
 			<td><?php echo $d['diskon_barang']; ?></td>
@@ -43,8 +45,8 @@
 			<td><?php echo $d['total_transaksi']; ?></td>
 			<td><?php echo $d['member_id']; ?></td>
 			<td>
-				<a href="edit_tampiltransaksi.php?id=<?php echo $d['id']; ?>">EDIT</a>
-				<a href="edit_tampiltransaksi.php?id=<?php echo $d['id']; ?>">HAPUS</a>
+				<a href="edittransaksi.php?id_transaksi=<?php echo $d['id_transaksi']; ?>">EDIT</a>
+				<a href="hapustransaksi.php?id_transaksi=<?php echo $d['id_transaksi']; ?>">HAPUS</a>
 			<td>
 		</tr>
 	<?php
